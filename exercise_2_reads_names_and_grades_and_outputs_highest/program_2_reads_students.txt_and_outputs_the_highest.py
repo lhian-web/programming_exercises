@@ -20,3 +20,21 @@ class StudentGradeAnalyzer:
         except ValueError:
             print("Error: Each line must be in 'Name, GWA' format")
             return []
+
+    def find_highest(self):
+        students = self.read_students_data()
+
+        if not students:
+            print("No data found")
+
+        highest_gwa = students[0][1]
+        highest_student = [students[0][0]]
+
+        for name, gwa in students[1:]:
+
+            if gwa > highest_gwa:
+                highest_gwa = gwa
+                highest_student = [name]
+
+            elif gwa == highest_gwa:
+                highest_student.append(name)
