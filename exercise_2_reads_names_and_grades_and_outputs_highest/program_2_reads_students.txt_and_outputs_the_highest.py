@@ -32,9 +32,18 @@ class StudentGradeAnalyzer:
 
         for name, gwa in students[1:]:
 
-            if gwa > highest_gwa:
+            if gwa < highest_gwa:
                 highest_gwa = gwa
                 highest_student = [name]
 
             elif gwa == highest_gwa:
                 highest_student.append(name)
+
+        print("Top student(s) with highest GWA:")
+        for student in highest_student:
+            print(f"Name: {student}")
+        print(f"Highest GWA: {highest_gwa}")
+
+if __name__ == "__main__":
+    analyzer = StudentGradeAnalyzer()
+    analyzer.find_highest()
