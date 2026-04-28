@@ -31,3 +31,7 @@ class IntegerSquareAndCube:
 
             else:
                 self.write_integers("triple.txt", number ** 3)
+
+if __name__ == "__main__":
+    integers = IntegerSquareAndCube()
+    integers.process_integers()
