@@ -1,16 +1,16 @@
-# This is a sample Python script.
+class MultiLineWriter:
+    def __init__(self, output_file: str = "myline.txt"):
+        self.output_file = output_file
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def write_multiple_lines(self):
+        with open(self.output_file, "w") as file:
 
+            while True:
+                user_line = input("Enter Line: ")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+                file.write(user_line + "\n")
 
+                continue_option = input("Are there more lines? y/n: ").lower()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+                if continue_option == "n":
+                    break
