@@ -14,3 +14,20 @@ class IntegerSquareAndCube:
         except ValueError:
             print("File must contain only integers")
             return []
+
+    def write_integers(self, filename: str, value: int):
+        with open(filename, "a") as file:
+            file.write(f"{value}\n")
+
+    def process_integers(self):
+        integers = self.read_integers()
+
+        open("double.txt", "w").close()
+        open("triple.txt", "w").close()
+
+        for number in integers:
+            if number % 2 == 0:
+                self.write_integers("double.txt", number ** 2)
+
+            else:
+                self.write_integers("triple.txt", number ** 3)
