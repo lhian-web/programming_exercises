@@ -1,5 +1,5 @@
 class MultiLineWriter:
-    def __init__(self, output_file: str = "myline.txt"):
+    def __init__(self, output_file: str = "mylife.txt"):
         self.output_file = output_file
 
     def write_multiple_lines(self):
@@ -14,3 +14,7 @@ class MultiLineWriter:
 
                 if continue_option == "n":
                     break
+
+if __name__ == "__main__":
+    multi_line_writer = MultiLineWriter()
+    multi_line_writer.write_multiple_lines()
